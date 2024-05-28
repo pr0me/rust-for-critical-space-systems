@@ -22,10 +22,12 @@ metal PowerPC CPUs.
 we develop a set of recommendations for practitioners
 in the realms of space system development.
 
+This repository is still WIP and we will add source code and notes on the remaining contributions soon.
+
 ## libcsp-rs
 ### Partial Rewrite
 
-We perform a partial rewrite of critical sections in libCSP's C implementation to demonstrate how Rust can be gradually incorporated into existing C code bases.
+We perform a partial rewrite of critical sections in [libCSP's C implementation](https://github.com/libcsp/libcsp) to demonstrate how Rust can be gradually incorporated into existing C code bases.
 
 #### How to Build
 Build the static Rust lib and make sure to build `core::` with `panic = "abort"`.
@@ -37,7 +39,7 @@ cargo build --release
 
 Note that the compiled lib will be in `./target/powerpc-unknown-none/release/libcsp_rs.a`.
 
-The flag to build the core lib and the target are defined in `.cargo/config.toml`, thus the library automatically builds for ppc.
+The flag to build the core lib and the target are defined in `.cargo/config.toml`, thus the library automatically builds for PPC.
 
 Other things to note (but that are taken care of):
 - `csp-rs` is intended to be used as part of `libcsp`, i.e., you should link against `libcsp` as a dependency. 
