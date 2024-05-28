@@ -23,9 +23,11 @@ we develop a set of recommendations for practitioners
 in the realms of space system development.
 
 ## libcsp-rs
+### Partial Rewrite
+
 We perform a partial rewrite of critical sections in libCSP's C implementation to demonstrate how Rust can be gradually incorporated into existing C code bases.
 
-### How to Build
+#### How to Build
 Build the static Rust lib and make sure to build `core::` with `panic = "abort"`.
 Building the lib will otherwise still succeed but linking it into a program later on will fail due to
 missing refs to `rust_eh_personality`.
@@ -47,3 +49,18 @@ Other things to note (but that are taken care of):
     (note the additional flags to make sure that we end up being `#![no_std]` compliant)
 - C bindings to our Rust lib are included in `./libcsp/src/libcsp_rs.h`
 - `csp_can1_rx` was replaced with an include and an `extern` ref in `libcsp/src/interfaces/csp_if_can.c`
+
+### Security Analysis
+We identified and fixed multiple bugs in libCSP in collaboration with the maintainers:
+https://github.com/libcsp/libcsp/pull/510
+
+## Citation
+```json
+@inproceedings{rustspace3S,
+    author = {Seidel, Lukas and Beier, Julian},
+    title = {Bringing Rust to Safety-Critical Systems in Space},
+    booktitle = {IEEE Security for Space Systems (3S)},
+    year = {2024},
+    month = {May},
+}
+```
