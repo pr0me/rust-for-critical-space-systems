@@ -1,4 +1,6 @@
 # Bringing Rust to Safety-Critical Systems in Space
+<a href="https://arxiv.org/pdf/2405.18135" target="_blank"> <img title="" src="paper/paper.png" alt="Front Page of Paper 'Bringing Rust to Safety-Critical Systems in Space'" align="right" width="200" padding="20"></a>
+
 
 The development of safety-critical aerospace systems
 is traditionally dominated by the C language. Its language characteristics make it trivial to accidentally introduce memory safety
